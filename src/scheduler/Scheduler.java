@@ -1,5 +1,7 @@
 package scheduler;
 
+import java.util.Scanner;
+
 /*
  * Objective: Create a weekly scheduling application.
  * 
@@ -25,7 +27,44 @@ package scheduler;
  */
 public class Scheduler {
 
-    public static void main(String[] args) {
+	public enum DaysOfWeek {
+		SUN, MON, TUES, WED, THUR, FRI, SAT;
+		
+	}
+	
 
-    }
+	public static void main(String[] args) {
+		DaysOfWeek[] enums = new DaysOfWeek[DaysOfWeek.values().length];
+		for (int i = 0; i < enums.length; i++) {
+			LinkedList <String> events = new LinkedList <String>();
+		
+			
+			
+		}
+			Scanner scan = new Scanner(System.in);
+			
+			
+			
+			
+			
+			System.out.println("Please type a day you would like to modify");
+			String day = scan.nextLine();
+		
+		
+	}
+public void add () {
+	Scanner scan = new Scanner(System.in);
+	System.out.println("What is the event you would like to add?");
+	String event = scan.nextLine();
+	
+}
+public void remove () {
+	Scanner scan = new Scanner(System.in);
+	System.out.println("What is the event you would like to remove?");
+	String event = scan.nextLine();
+	
+}
+public void view () {
+	
+}
 }
