@@ -7,4 +7,11 @@ public class Event {
 	 this.time = time;
 	 this.description = description;
  }
+ 
+ public void returnEvent() {
+	 System.out.println(" ");
+	 System.out.println(time + " = " + description);
+	 System.out.println(" ");
+
+ }
 }

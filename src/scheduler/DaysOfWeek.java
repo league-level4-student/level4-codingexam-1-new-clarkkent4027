@@ -12,5 +12,6 @@ public static void main(String[] args) {
 	enums[4] = THURSDAY;
 	enums[5] = FRIDAY;
 	enums[6] = SATURDAY;
-	}
+	
+}
 }

@@ -25,29 +25,32 @@ import java.util.Scanner;
  * - Make sure any enums or classes you create have properly encapsulated member
  *   variables.
  */
-public class Scheduler {
+public class Scheduler extends Day{
 
 	public static void main(String[] args) {
+	Sunday sun = new Sunday();
+	Monday mon = new Monday();
+//	Scanner scammer = new Scanner(System.in);
+//	System.out.println("Which day would you like to modify?");
+//	String day = scammer.nextLine();
 	
 
-			
-			
-		
 		
 	}
-public void add () {
-	Scanner scan = new Scanner(System.in);
-	System.out.println("What is the description?");
-	String event = scan.nextLine();
+
+@Override
+public void returnSchedule() {
+	// TODO Auto-generated method stub
 	
 }
-public void remove () {
-	Scanner scan = new Scanner(System.in);
-	System.out.println("What is the event you would like to remove?");
-	String event = scan.nextLine();
+@Override
+public void addEvent() {
+	// TODO Auto-generated method stub
 	
 }
-public void view () {
+@Override
+public void removeEvent() {
+	// TODO Auto-generated method stub
 	
 }
 }

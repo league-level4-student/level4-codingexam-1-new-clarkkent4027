@@ -2,7 +2,7 @@ package scheduler;
 
 import java.util.Scanner;
 
-public class Sunday extends Day {
+public class Monday extends Day {
 	LinkedList<Event> daily = new LinkedList<Event>();
 	Scanner scan = new Scanner(System.in);
 
@@ -14,6 +14,7 @@ public class Sunday extends Day {
 			current.getValue().returnEvent();
 			current = current.getNext();
 		}
+
 	}
 
 	@Override
@@ -30,15 +31,7 @@ public class Sunday extends Day {
 	@Override
 	public void removeEvent() {
 		// TODO Auto-generated method stub
-		Node<Event> current = daily.getHead();
-		while (current.getNext() != null) {
-			current.getValue().returnEvent();
-			current = current.getNext();
-		}
-		daily.getTail().getValue().returnEvent();
-		System.out.println("Please enter the number of the event you would like to delete.");
-		Integer num = scan.nextInt();
-		num = num - 1;
-		daily.remove(num);
-}
+
+	}
+
 }
