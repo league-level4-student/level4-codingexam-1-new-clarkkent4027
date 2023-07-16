@@ -27,34 +27,17 @@ import java.util.Scanner;
  */
 public class Scheduler {
 
-	public enum DaysOfWeek {
-		SUN, MON, TUES, WED, THUR, FRI, SAT;
-		
-	}
+	public static void main(String[] args) {
 	
 
-	public static void main(String[] args) {
-		DaysOfWeek[] enums = new DaysOfWeek[DaysOfWeek.values().length];
-		for (int i = 0; i < enums.length; i++) {
-			LinkedList <String> events = new LinkedList <String>();
-		
 			
 			
-		}
-			Scanner scan = new Scanner(System.in);
-			
-			
-			
-			
-			
-			System.out.println("Please type a day you would like to modify");
-			String day = scan.nextLine();
 		
 		
 	}
 public void add () {
 	Scanner scan = new Scanner(System.in);
-	System.out.println("What is the event you would like to add?");
+	System.out.println("What is the description?");
 	String event = scan.nextLine();
 	
 }
