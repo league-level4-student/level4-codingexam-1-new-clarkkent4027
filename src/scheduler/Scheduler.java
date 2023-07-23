@@ -25,32 +25,60 @@ import java.util.Scanner;
  * - Make sure any enums or classes you create have properly encapsulated member
  *   variables.
  */
-public class Scheduler extends Day{
+public class Scheduler extends Day {
 
 	public static void main(String[] args) {
-	Sunday sun = new Sunday();
-	Monday mon = new Monday();
-//	Scanner scammer = new Scanner(System.in);
-//	System.out.println("Which day would you like to modify?");
-//	String day = scammer.nextLine();
-	
+		Scanner scam = new Scanner(System.in);
+		boolean active = true;
+		Sunday sun = new Sunday();
+		Monday mon = new Monday();
+		System.out.println(
+				"Welcome to your Scheduler! Please type the day you would like to modify. On the next line, type 'add', 'remove', or 'view'!");
+		do {
+			String input = scam.next();
 
-		
+			if (input.equalsIgnoreCase("sunday")) {
+				String modification = scam.next();
+				if (modification.equals("add")) {
+					sun.addEvent();
+				} else if (modification.equals("remove")) {
+					sun.removeEvent();
+				} else if (modification.equals("view")) {
+					sun.returnSchedule();
+
+				}
+			}
+
+			if (input.equalsIgnoreCase("Monday")) {
+				String modification = scam.next();
+				if (modification.equals("add")) {
+					mon.addEvent();
+				} else if (modification.equals("remove")) {
+					mon.removeEvent();
+				} else if (modification.equals("view")) {
+					mon.returnSchedule();
+
+				}
+			}
+
+		} while (active == true);
 	}
 
-@Override
-public void returnSchedule() {
-	// TODO Auto-generated method stub
-	
-}
-@Override
-public void addEvent() {
-	// TODO Auto-generated method stub
-	
-}
-@Override
-public void removeEvent() {
-	// TODO Auto-generated method stub
-	
-}
+	@Override
+	public void returnSchedule() {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void addEvent() {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void removeEvent() {
+		// TODO Auto-generated method stub
+
+	}
 }
