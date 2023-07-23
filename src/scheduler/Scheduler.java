@@ -27,17 +27,22 @@ import java.util.Scanner;
  */
 public class Scheduler extends Day {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws Exception {
 		Scanner scam = new Scanner(System.in);
 		boolean active = true;
 		Sunday sun = new Sunday();
 		Monday mon = new Monday();
-		System.out.println(
-				"Welcome to your Scheduler! Please type the day you would like to modify. On the next line, type 'add', 'remove', or 'view'!");
+		Tuesday tues = new Tuesday();
+		Wednesday wed = new Wednesday();
+		Thursday thur = new Thursday();
+		Friday fri = new Friday();
+		Saturday sat = new Saturday();
+		System.out.println("Welcome to your Scheduler! Please type out the day you would like to modify. Press 'ENTER.' Then, type 'add', 'remove', or 'view' to modify that day");
+
 		do {
 			String input = scam.next();
 
-			if (input.equalsIgnoreCase("sunday")) {
+			if (input.equalsIgnoreCase("Sunday")) {
 				String modification = scam.next();
 				if (modification.equals("add")) {
 					sun.addEvent();
@@ -57,6 +62,66 @@ public class Scheduler extends Day {
 					mon.removeEvent();
 				} else if (modification.equals("view")) {
 					mon.returnSchedule();
+
+				}
+			}
+
+			if (input.equalsIgnoreCase("Tuesday")) {
+				String modification = scam.next();
+				if (modification.equals("add")) {
+					tues.addEvent();
+				} else if (modification.equals("remove")) {
+					tues.removeEvent();
+				} else if (modification.equals("view")) {
+					tues.returnSchedule();
+
+				}
+			}
+			
+			if (input.equalsIgnoreCase("Wednesday")) {
+				String modification = scam.next();
+				if (modification.equals("add")) {
+					wed.addEvent();
+				} else if (modification.equals("remove")) {
+					wed.removeEvent();
+				} else if (modification.equals("view")) {
+					wed.returnSchedule();
+
+				}
+			}
+			
+			if (input.equalsIgnoreCase("Thursday")) {
+				String modification = scam.next();
+				if (modification.equals("add")) {
+					thur.addEvent();
+				} else if (modification.equals("remove")) {
+					thur.removeEvent();
+				} else if (modification.equals("view")) {
+					thur.returnSchedule();
+
+				}
+			}
+			
+			if (input.equalsIgnoreCase("Friday")) {
+				String modification = scam.next();
+				if (modification.equals("add")) {
+					fri.addEvent();
+				} else if (modification.equals("remove")) {
+					fri.removeEvent();
+				} else if (modification.equals("view")) {
+					fri.returnSchedule();
+
+				}
+			}
+			
+			if (input.equalsIgnoreCase("Saturday")) {
+				String modification = scam.next();
+				if (modification.equals("add")) {
+					sat.addEvent();
+				} else if (modification.equals("remove")) {
+					sat.removeEvent();
+				} else if (modification.equals("view")) {
+					sat.returnSchedule();
 
 				}
 			}

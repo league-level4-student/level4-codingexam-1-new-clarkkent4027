@@ -2,7 +2,7 @@ package scheduler;
 
 import java.util.Scanner;
 
-public class Monday extends Day {
+public class Wednesday extends Day {
 	LinkedList<Event> daily = new LinkedList<Event>();
 	Scanner scan = new Scanner(System.in);
 
@@ -48,15 +48,15 @@ public class Monday extends Day {
 			scan.nextLine();
 			String description = scan.nextLine();
 			daily.add(new Event(time, description));
+			System.out.println("Event added!");
 			Event Event1 = new Event(time, description);
 			Node<Event> current = daily.getHead();
 			while (current.getNext() != null) {
 				if (current.getValue().getTime().equals(Event1.getTime())) {
 					System.out.println(" ");
-					System.out.println("ERROR: Time slot is already taken");
+					System.out.println("CRITICAL ERROR");
+					System.out.println("That time slot is already taken!!!");
 					throw new SchedulingConflictException();
-				} else {
-					System.out.println("Event added!");
 				}
 				current = current.getNext();
 			}
@@ -73,5 +73,4 @@ public class Monday extends Day {
 		daily.remove(num);
 		System.out.println("Event removed!");
 	}
-
 }

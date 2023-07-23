@@ -3,14 +3,14 @@ package scheduler;
 import java.util.Scanner;
 
 public class Sunday extends Day {
-	 LinkedList<Event> daily = new LinkedList<Event>();
+	LinkedList<Event> daily = new LinkedList<Event>();
 	Scanner scan = new Scanner(System.in);
 
 	@Override
 	public void returnSchedule() {
 		// TODO Auto-generated method stub
 		if (daily.size() == 0) {
-			System.out.println("Error: Schedule is empty");
+			System.out.println("ERROR: Schedule is empty");
 		}
 		if (daily.size() == 1) {
 			Node<Event> current = daily.getHead();
@@ -31,30 +31,37 @@ public class Sunday extends Day {
 	}
 
 	@Override
-	public void addEvent() {
+	public void addEvent() throws SchedulingConflictException {
 		// TODO Auto-generated method stub
-		if (daily.size() == 0) {
+		if (daily.size() < 1) {
 			System.out.println("Please enter a time for your event.");
 			Double time = scan.nextDouble();
 			System.out.println("Please enter a description for your event.");
-			String description = scan.next();
+			scan.nextLine();
+			String description = scan.nextLine();
 			daily.add(new Event(time, description));
 			System.out.println("Event added!");
-		}
-		if (daily.size() > 0) {
+		} else if (daily.size() >= 1) {
+			System.out.println("Please enter a time for your event.");
+			Double time = scan.nextDouble();
+			System.out.println("Please enter a description for your event.");
+			scan.nextLine();
+			String description = scan.nextLine();
+			Event Event1 = new Event(time, description);
 			Node<Event> current = daily.getHead();
 			while (current.getNext() != null) {
-				current.getValue().returnEvent();
+				if (current.getValue().getTime().equals(Event1.getTime())) {
+					System.out.println(" ");
+					System.out.println("ERROR: Time slot is already taken");
+					throw new SchedulingConflictException();
+				}else {
+					daily.add(new Event(time, description));
+					System.out.println("Event added!");
+				}
 				current = current.getNext();
 			}
 		}
 
-	}
-
-	public static void SchedulingConflictException(Double time) throws Exception {
-	 if (time < 0) {
-	 throw new Exception();
-	 }
 	}
 
 	@Override
@@ -64,5 +71,6 @@ public class Sunday extends Day {
 		int num = scan.nextInt();
 		num = num - 1;
 		daily.remove(num);
+		System.out.println("Event removed!");
 	}
 }
