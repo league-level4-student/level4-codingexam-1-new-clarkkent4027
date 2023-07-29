@@ -7,9 +7,4 @@ public class SchedulingConflictException extends Exception {
 	 public void criticalError(){
 			JOptionPane.showMessageDialog(null, "CRITICAL ERROR!!!");
 		}
-
-	public void printStackTrace() {
-		// TODO Auto-generated method stub
-		
-	}
 }
